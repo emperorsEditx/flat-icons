@@ -63,7 +63,7 @@ export default function Tab() {
             <TopCategories />
           </TabsContent>
           <TabsContent value="icons">
-            <IconsContainer />
+            <IconsContainer iconsLength={200}/>
             <div className="flex flex-wrap justify-center gap-2 md:flex-row py-8">
               <Button className="text-white bg-[#2CB88B] px-5 hover:bg-green-600">
                 Load More

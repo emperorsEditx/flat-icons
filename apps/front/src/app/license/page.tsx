@@ -1,0 +1,139 @@
+import { Separator } from "@/components/ui/separator";
+import React from "react";
+
+export default function page() {
+  return (
+    <div className="mx-auto my-20 space-y-6">
+      <h1 className="font-bold text-[40px]">License Agreement</h1>
+      <p className="text-[26px] leading-[40px] list-group-item">
+        This license agreement (the “Agreement”) sets forth the terms by which
+        Alexander Kahlkopf, the owner of iconmonstr (the “Licensor”), shall
+        provide access to certain Work (defined below) to you (the “Licensee”,
+        “you” or “your”). This Agreement regulates the free use of the icons,
+        fonts, images and other media content (collectively, the “Work”), which
+        is made available via the website iconmonstr.com (the “Website”). By
+        downloading or copying a Work, you agree to be bound by the following
+        terms and conditions.
+      </p>
+
+      <Separator
+        style={{ margin: "85px 0", height: "5px", color: "#DDDDDD" }}
+      />
+      <h1 className="font-bold text-[40px]">1. Grant of Rights</h1>
+      <p className="text-[26px] leading-[40px] list-group-item">
+        The Works on the Website are copyrighted property of Licensor. Licensor
+        hereby grants Licensee a perpetual, non-exclusive, non-transferrable
+        single-user license for the use of the Work based on the conditions of
+        this Agreement. You agree that the Work serves as part of the design and
+        is not the basis or main component of the product, template or
+        application distributed by the Licensee. Furthermore, you agree not to
+        sell, redistribute, sublicense, share or otherwise transfer the Work to
+        other people or entities.
+      </p>
+
+      <Separator
+        style={{ margin: "85px 0", height: "5px", color: "#DDDDDD" }}
+      />
+      <h1 className="font-bold text-[40px]">2. Permitted Uses</h1>
+      <ul className="list-disc list-group">
+        <li className="text-[26px] ml-9 list-group-item">
+          Licensee may use the Work in non-commercial and commercial projects,
+          services or products without attribution.
+        </li>
+        <li className="text-[26px] ml-9 list-group-item">
+          Licensee may use the Work for any illustrative purposes in any media,
+          including, but not limited to, websites, web banners, newsletters, PDF
+          documents, blogs, emails, slideshows, TV and video presentations,
+          smartphones, splash screens, movies, magazine articles, books,
+          advertisements, brochures, document illustrations, booklets,
+          billboards, business cards, packages, etc.
+        </li>
+        <li className="text-[26px] ml-9 list-group-item">
+          Licensee may use the Work in template or application without
+          attribution; provided, however, that the Work serves as part of the
+          design and is not the basis or main component of the product, template
+          or application distributed by Licensee and is not used contrary to the
+          terms and conditions of this Agreement.
+        </li>
+        <li className="text-[26px] ml-9 list-group-item">
+          Licensee may adapt or change the Work according to his or her
+          requirements.
+        </li>
+      </ul>
+
+      <Separator
+        style={{ margin: "85px 0", height: "5px", color: "#DDDDDD" }}
+      />
+
+      <h1 className="font-bold text-[40px]">3. Prohibited Uses</h1>
+      <ul className="list-disc list-group">
+        <li className="text-[26px] ml-9 list-group-item">
+          Licensee may not sell, redistribute, sublicense, share or otherwise
+          transfer the Work to other people or entities.
+        </li>
+        <li className="text-[26px] ml-9 list-group-item">
+          Licensee may not use the Work as part of a logo, trademark or service
+          mark.
+        </li>
+        <li className="text-[26px] ml-9 list-group-item">
+          Licensee may not use the Work for pornographic, infringing,
+          defamatory, racist or religiously offensive illustrations.
+        </li>
+      </ul>
+
+      <Separator
+        style={{ margin: "85px 0", height: "5px", color: "#DDDDDD" }}
+      />
+
+      <h1 className="font-bold text-[40px]">
+        4. Additional Information on Rights
+      </h1>
+      <p className="text-[26px] leading-[40px] list-group-item">
+        Certain Works, such as logos or brands, are subject to copyright and
+        require the agreement of a third party for the assignment of these
+        rights. Licensee is responsible for providing all rights, agreements,
+        and licenses for the use of the Work.
+      </p>
+
+      <Separator
+        style={{ margin: "85px 0", height: "5px", color: "#DDDDDD" }}
+      />
+
+      <h1 className="font-bold text-[40px]">5. Termination</h1>
+      <p className="text-[26px] leading-[40px] list-group-item">
+        This Agreement shall automatically terminate without notice if you do
+        not comply with the terms or conditions specified in this Agreement. If
+        you yourself wish to terminate this Agreement, destroy the Work, all
+        copies and derivatives of the Work and any materials related to it.
+      </p>
+
+      <Separator
+        style={{ margin: "85px 0", height: "5px", color: "#DDDDDD" }}
+      />
+
+      <h1 className="font-bold text-[40px]">6. Indemnification</h1>
+      <p className="text-[26px] leading-[40px] list-group-item">
+        You agree to indemnify Licensor for any and all claims, liability
+        performances, damages, costs (including attorney fees) or other
+        liabilities that are caused by or related to a breach of this Agreement,
+        which are caused by the use of the Website or Work, by the
+        non-compliance of the use restrictions of a Work or which are caused by
+        the claims of third parties regarding the use of a Work.
+      </p>
+
+      <Separator
+        style={{ margin: "85px 0", height: "5px", color: "#DDDDDD" }}
+      />
+
+      <h1 className="font-bold text-[40px]">7. Warranty and Liability</h1>
+      <p className="text-[26px] leading-[40px] list-group-item">
+        The Website and the Works are provided “as is.” Licensor does not accept
+        any warranty or liability regarding a Work, the Website, the accuracy of
+        the information or rights described therein or the licenses, which are
+        subject to this Agreement. Licensor is not liable for damages, costs,
+        losses or claims incurred by you, another person or entity by the use of
+        the Website or the Works.
+      </p>
+    </div>
+  );
+}

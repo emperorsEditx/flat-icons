@@ -1,9 +1,12 @@
-import React from "react";
-import { Card, CardContent } from "./ui/card";
 import { Search } from "lucide-react";
+import { Card, CardContent } from "./ui/card";
 
-export default function IconsContainer() {
-  const icons = Array.from({ length: 200 }, (_, i) => (
+type IconsContainerProps = {
+  iconsLength: number;
+};
+
+export default function IconsContainer({ iconsLength }: IconsContainerProps) {
+  const icons = Array.from({ length: iconsLength }, (_, i) => (
     <Search key={i} strokeWidth={1} size={35} />
   ));
 
