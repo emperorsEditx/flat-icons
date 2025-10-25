@@ -1,8 +1,20 @@
+"use client";
+import { useSearch } from "@/app/context/SearchContext";
+import { FormEvent } from "react";
 import { ChevronDown, SearchIcon } from "lucide-react";
 
 export default function SearchBar() {
+  const { setSearchActive, searchQuery, setSearchQuery } = useSearch();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    if (searchQuery.trim() !== "") {
+      setSearchActive(true);
+    }
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div className="mt-2">
         <div className="flex items-center bg-white rounded-md pl-3 outline-1 -outline-offset-1 shadow-2xl has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-gray-500">
           <div className="shrink-0 text-base select-none sm:text-sm/6">
@@ -12,6 +24,8 @@ export default function SearchBar() {
             id="price"
             name="price"
             type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search...."
             className="block font-semibold min-w-0 grow py-5 pr-3 text-3xl pl-2 focus:outline-none sm:text-sm/6"
           />
@@ -34,6 +48,6 @@ export default function SearchBar() {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }

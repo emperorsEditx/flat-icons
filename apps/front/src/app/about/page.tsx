@@ -6,9 +6,9 @@ export default function page() {
       <div className="max-w-4xl mx-auto my-20 space-y-6 text-center">
         <h1 className="font-bold text-[40px]">About</h1>
         <p className="text-[26px] leading-[40px]">
-          I'm an icon designer with 12 years of experience. Welcome to my
-          website! Here you'll find a showcase of my work and information about
-          my design process. I'm passionate about creating impactful and
+          I&apos;m an icon designer with 12 years of experience. Welcome to my
+          website! Here you&apos;ll find a showcase of my work and information about
+          my design process. I&apos;m passionate about creating impactful and
           memorable icons that elevate brands and enhance user experiences.
         </p>
       </div>
