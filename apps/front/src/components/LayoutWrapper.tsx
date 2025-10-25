@@ -12,7 +12,7 @@ export default function LayoutWrapper({
       <Header />
 
       {/* Main Body */}
-      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 2xl:px-52 py-6">
+      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 2xl:px-45 py-6">
         {children}
       </main>
 

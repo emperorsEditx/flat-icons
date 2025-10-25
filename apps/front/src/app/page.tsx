@@ -11,7 +11,7 @@ export default function HomePage() {
       {!searchActive ? (
         <>
           <div className="text-center my-10">
-            <h1 className="text-3xl">
+            <h1 className="text-4xl">
               Discover <strong>49,000+</strong> free icons in{" "}
               <strong>253</strong> Collections
             </h1>

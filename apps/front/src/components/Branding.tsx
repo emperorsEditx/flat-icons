@@ -4,7 +4,7 @@ export default function Branding() {
   return (
     <Link href="/">
       <svg
-        width="100"
+        width="150"
         height="40"
         viewBox="0 0 150 40"
         fill="none"
