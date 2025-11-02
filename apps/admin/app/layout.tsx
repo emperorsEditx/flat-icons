@@ -2,6 +2,7 @@
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "@myorg/ui";
+import DashboardLayout from "./dashboard/components/DashboardLayout";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {children}
+          <DashboardLayout>{children}</DashboardLayout>
         </ThemeProvider>
       </body>
     </html>

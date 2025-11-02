@@ -1,8 +1,6 @@
 'use client';
-
-import * as React from 'react';
-import Dashboard from '../dashboard/Dashboard';
+import MainGrid from "./components/MainGrid";
 
 export default function DashboardPage() {
-  return <Dashboard />;
+  return <MainGrid />;
 }
