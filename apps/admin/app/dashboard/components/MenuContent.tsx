@@ -26,8 +26,8 @@ export default function MenuContent() {
   const pathname = usePathname();
 
   return (
-    <Stack sx={{ flexGrow: 1, p: 1, justifyContent: "space-between" }}>
-      <List dense sx={{ width: "100%" }}>
+    <Stack sx={{ flexGrow: 1, p: 1, justifyContent: "space-between", paddingRight:'0px',border: 'none', backgroundColor: '#1B252E' }}>
+      <List dense sx={{ width: "100%", paddingRight:'0px' }}>
         {mainListItems.map((item, index) => {
           const route = `/${item.text.replace(" ", "-").toLowerCase() == "dashboard" ? "" : item.text.replace(" ", "-").toLowerCase()}`;
           const isActive = pathname === route;
@@ -39,8 +39,8 @@ export default function MenuContent() {
               sx={{
                 display: "block",
                 width: "100%",
-                pr: 0, // removed right padding
               }}
+              style={{paddingRight:'0px'}}
             >
               <Link
                 href={route}
@@ -48,41 +48,16 @@ export default function MenuContent() {
                   textDecoration: "none",
                   color: "inherit",
                   width: "100%",
+                  paddingRight: '0px'
                 }}
               >
                 <ListItemButton
                   selected={isActive}
-                  sx={{
-                    width: "100%",
-                    borderRadius: 2,
-                    borderTopRightRadius: 0,
-                    borderBottomRightRadius: 0,
-                    px: 2,
-                    py: 2,
-                    pr: 0, // removed right padding
-                    transition: "all 0.3s ease",
-                    justifyContent: "flex-start",
-                    backgroundColor: isActive ? "background.paper" : "transparent",
-                    color: isActive ? "#fff" : "text.primary",
-                    boxShadow: isActive ? 2 : "none",
-                    "& .MuiListItemIcon-root": {
-                      color: isActive ? "background.paper" : "text.secondary",
-                      minWidth: 40,
-                    },
-                    "&:hover": {
-                      backgroundColor: isActive
-                        ? "background.paper"
-                        : "action.hover",
-                    },
-                  }}
+                  style={{color:isActive?'':'#fff', padding: '10px 0px 10px 15px', borderRadius: '50px 0px 0px 50px', backgroundColor: isActive ? '#F4F7FE' : '' }}
                 >
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText
                     primary={item.text}
-                    primaryTypographyProps={{
-                      fontWeight: isActive ? "600" : "400",
-                      fontSize: "0.95rem",
-                    }}
                   />
                 </ListItemButton>
               </Link>

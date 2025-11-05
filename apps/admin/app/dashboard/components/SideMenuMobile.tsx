@@ -59,9 +59,9 @@ export default function SideMenuMobile({ open, toggleDrawer }: SideMenuMobilePro
         <Divider />
         <Stack sx={{ flexGrow: 1 }}>
           <MenuContent />
-          <Divider />
+          {/* <Divider /> */}
         </Stack>
-        <CardAlert />
+        {/* <CardAlert /> */}
         <Stack sx={{ p: 2 }}>
           <Button variant="outlined" fullWidth startIcon={<LogoutRoundedIcon />}>
             Logout

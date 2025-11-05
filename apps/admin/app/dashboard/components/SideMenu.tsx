@@ -1,27 +1,27 @@
-'use client';
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Avatar from '@mui/material/Avatar';
-import MuiDrawer, { drawerClasses } from '@mui/material/Drawer';
-import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import SelectContent from './SelectContent';
-import MenuContent from './MenuContent';
-import CardAlert from './CardAlert';
-import OptionsMenu from './OptionsMenu';
+"use client";
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Avatar from "@mui/material/Avatar";
+import MuiDrawer, { drawerClasses } from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import SelectContent from "./SelectContent";
+import MenuContent from "./MenuContent";
+import CardAlert from "./CardAlert";
+import OptionsMenu from "./OptionsMenu";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const Drawer = styled(MuiDrawer)({
   width: drawerWidth,
   flexShrink: 0,
-  boxSizing: 'border-box',
+  boxSizing: "border-box",
   mt: 10,
   [`& .${drawerClasses.paper}`]: {
     width: drawerWidth,
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
   },
 });
 
@@ -30,28 +30,96 @@ export default function SideMenu() {
     <Drawer
       variant="permanent"
       sx={{
-        display: { xs: 'none', md: 'block' },
+        display: { xs: "none", md: "block" },
         [`& .${drawerClasses.paper}`]: {
-          backgroundColor: 'background.paper',
+          backgroundColor: "#1B252E",
         },
+        border: 'none', backgroundColor: '#1B252E'
       }}
     >
       <Box
         sx={{
-          display: 'flex',
-          mt: 'calc(var(--template-frame-height, 0px) + 4px)',
+          display: "flex",
+          mt: "calc(var(--template-frame-height, 0px) + 10px)",
           p: 1.5,
+          border: 'none', backgroundColor: '#1B252E'
         }}
       >
-        <SelectContent />
+        <svg
+          width="126"
+          height="33"
+          viewBox="0 0 126 33"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M62.8442 0H65.57L66.8802 5.92285L68.4396 0H70.5231L72.0824 5.92285L73.3927 0H76.1052L73.6156 9.38204H70.8898L69.4745 4.16684L68.0726 9.38204H65.3339L62.8442 0Z"
+            fill="white"
+          />
+          <path
+            d="M77.1404 9.38228V0.000244141H79.6433V3.56448H82.9978V0.000244141H85.4873V9.38228H82.9978V5.80483H79.6433V9.38228H77.1404Z"
+            fill="white"
+          />
+          <path
+            d="M86.483 9.38228L89.903 0.000244141H92.4711L95.8911 9.38228H93.2443L92.7986 8.05883H89.5753L89.1295 9.38228H86.4828H86.483ZM90.1257 6.06693H91.9997L91.0694 3.17113L90.1257 6.06693Z"
+            fill="white"
+          />
+          <path
+            d="M94.8954 2.24078V0H103.02V2.24078H100.202V9.38204H97.7128V2.24078H94.8954Z"
+            fill="white"
+          />
+          <path
+            d="M106.383 9.38228L109.803 0.000244141H112.371L115.791 9.38228H113.145L112.699 8.05883H109.476L109.03 9.38228H106.383ZM110.026 6.06693H111.9L110.97 3.17113L110.026 6.06693Z"
+            fill="white"
+          />
+          <path
+            d="M116.775 9.38228V0.000244141H118.989L122.619 5.17624V0.000244141H125.121V9.38228H122.92L119.277 4.20629V9.38228H116.775Z"
+            fill="white"
+          />
+          <path
+            d="M62.8442 31.5437V13.5634H67.6407V31.5437H62.8442Z"
+            fill="white"
+          />
+          <path
+            d="M79.066 31.8453C77.3588 31.8453 75.8267 31.4647 74.4709 30.7027C73.1146 29.9411 72.0477 28.8653 71.2691 27.4758C70.4905 26.0865 70.101 24.4457 70.101 22.5536C70.101 20.6614 70.4905 19.0213 71.2691 17.6318C72.0477 16.2425 73.1146 15.1666 74.4709 14.4048C75.8267 13.6431 77.3588 13.2621 79.066 13.2621C81.4432 13.2621 83.3684 13.8566 84.8418 15.0454C86.3149 16.2342 87.236 17.8579 87.604 19.9173L84.2748 20.4114C83.363 20.5467 82.5009 20.0984 81.9739 19.342C81.7811 19.0652 81.5484 18.8299 81.2761 18.6365C80.6396 18.1843 79.9032 17.958 79.066 17.958C77.8774 17.958 76.9192 18.385 76.1907 19.2386C75.4628 20.0929 75.0988 21.1979 75.0988 22.5536C75.0988 23.9092 75.4628 25.0145 76.1907 25.8685C76.9192 26.7221 77.8774 27.1491 79.066 27.1491C79.9203 27.1491 80.6692 26.9062 81.3136 26.4206C81.6243 26.1866 81.8834 25.8885 82.0911 25.5261C82.5584 24.7104 83.45 24.2329 84.3843 24.3377L87.7299 24.7129C87.3615 26.9735 86.3946 28.7274 84.8295 29.974C83.2637 31.2218 81.3428 31.845 79.0662 31.845L79.066 31.8453Z"
+            fill="white"
+          />
+          <path
+            d="M97.6488 31.8453C95.9415 31.8453 94.4095 31.4647 93.0536 30.7027C91.6973 29.9411 90.6304 28.8653 89.8518 27.4758C89.0732 26.0865 88.6837 24.4457 88.6837 22.5536C88.6837 20.6614 89.0732 19.0213 89.8518 17.6318C90.6304 16.2425 91.6973 15.1666 93.0536 14.4048C94.4095 13.6431 95.9415 13.2621 97.6488 13.2621C99.373 13.2621 100.914 13.6431 102.269 14.4048C103.625 15.1666 104.697 16.2423 105.484 17.6318C106.27 19.0215 106.664 20.6622 106.664 22.5536C106.664 24.4449 106.27 26.0865 105.484 27.4758C104.697 28.8651 103.625 29.9411 102.269 30.7027C100.914 31.4647 99.373 31.8453 97.6488 31.8453ZM97.6488 27.1493C98.8544 27.1493 99.8211 26.7223 100.549 25.8687C101.278 25.0145 101.642 23.9094 101.642 22.5538C101.642 21.1981 101.278 20.0929 100.549 19.2388C99.8213 18.3852 98.8546 17.9582 97.6488 17.9582C96.4602 17.9582 95.5019 18.3852 94.7734 19.2388C94.0455 20.0931 93.6816 21.1981 93.6816 22.5538C93.6816 23.9094 94.0455 25.0147 94.7734 25.8687C95.5019 26.7223 96.4602 27.1493 97.6488 27.1493Z"
+            fill="white"
+          />
+          <path
+            d="M109.125 31.5437V13.5634H113.369L120.326 23.4828V13.5634H125.121V31.5437H120.903L113.922 21.6243V31.5437H109.125Z"
+            fill="white"
+          />
+          <path
+            d="M42.501 0L28.0403 25.0468L32.7408 32.8964H41.6362L56.0969 7.84953L51.3964 0H42.501Z"
+            fill="#00A654"
+          />
+          <path
+            d="M13.5959 0L28.0566 25.0468L23.3561 32.8964H14.4607L0 7.84953L4.70051 0H13.5959Z"
+            fill="#00A654"
+          />
+          <path
+            d="M18.4861 8.4701L23.1866 0H32.6677L37.3687 8.88945L28.0566 25.0468L18.4861 8.4701Z"
+            fill="#00A654"
+          />
+          <path
+            d="M49.5215 13.287L52.1157 8.79357L49.2277 3.97058H43.7622L41.3677 8.11777L49.5215 13.287Z"
+            fill="white"
+          />
+          <path
+            d="M39.8607 10.7279L32.168 24.0521L35.0561 28.875H40.5217L48.0145 15.8971L39.8607 10.7279Z"
+            fill="white"
+          />
+        </svg>
       </Box>
-      <Divider />
       <Box
         sx={{
-          overflow: 'auto',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
+          overflow: "auto",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <MenuContent />
