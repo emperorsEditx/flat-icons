@@ -1,0 +1,9 @@
+{
+  "name": "@myorg/db",
+  "version": "1.0.0",
+  "main": "src/client.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "latest"
+  }
+}
