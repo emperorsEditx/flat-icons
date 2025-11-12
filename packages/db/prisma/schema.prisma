@@ -1,26 +1,25 @@
-generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated"
-}
-
 datasource db {
   provider = "mysql"
-  url      = "mysql://root@localhost:3306/what_an_icon_db"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
 }
 
 model User {
-  id             String   @id @default(cuid())
+  id             Int       @id @default(autoincrement())
   name           String
-  email          String   @unique
-  username       String   @unique
+  email          String    @unique
   password       String
-  bio            String?   // optional
-  avatar         String?   // profile picture
-  role           Role      @default(USER)
-  isActive       Boolean   @default(true)
-  lastLogin      DateTime? 
+  role           Role      @default(USER) // For role-based access
+  isVerified     Boolean   @default(false)
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
+  refreshToken   String?   // optional, for JWT refresh tokens
+
+  @@map("users") // maps to 'users' table in MySQL
 }
 
 enum Role {
