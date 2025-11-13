@@ -134,6 +134,54 @@ exports.Prisma.UserScalarFieldEnum = {
   refreshToken: 'refreshToken'
 };
 
+exports.Prisma.IconScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  path: 'path',
+  type: 'type',
+  status: 'status',
+  approved: 'approved',
+  need_to_improve: 'need_to_improve',
+  style: 'style',
+  category_id: 'category_id',
+  created_by: 'created_by',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
+  deleted_at: 'deleted_at'
+};
+
+exports.Prisma.BundleScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  category_id: 'category_id',
+  description: 'description',
+  is_paid: 'is_paid',
+  price: 'price',
+  status: 'status',
+  created_by: 'created_by',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
+  deleted_at: 'deleted_at'
+};
+
+exports.Prisma.IconBundleScalarFieldEnum = {
+  icon_id: 'icon_id',
+  bundle_id: 'bundle_id'
+};
+
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  status: 'status'
+};
+
+exports.Prisma.TagScalarFieldEnum = {
+  id: 'id',
+  taggable_id: 'taggable_id',
+  taggable_type: 'taggable_type',
+  name: 'name'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -148,8 +196,44 @@ exports.Role = exports.$Enums.Role = {
   ADMIN: 'ADMIN'
 };
 
+exports.IconType = exports.$Enums.IconType = {
+  SVG: 'SVG',
+  PNG: 'PNG'
+};
+
+exports.IconStatus = exports.$Enums.IconStatus = {
+  PENDING: 'PENDING',
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE'
+};
+
+exports.IconStyle = exports.$Enums.IconStyle = {
+  OUTLINE: 'OUTLINE',
+  FILL: 'FILL'
+};
+
+exports.BundleStatus = exports.$Enums.BundleStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE'
+};
+
+exports.CategoryStatus = exports.$Enums.CategoryStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE'
+};
+
+exports.TaggableType = exports.$Enums.TaggableType = {
+  ICON: 'ICON',
+  BUNDLE: 'BUNDLE'
+};
+
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Icon: 'Icon',
+  Bundle: 'Bundle',
+  IconBundle: 'IconBundle',
+  Category: 'Category',
+  Tag: 'Tag'
 };
 
 /**

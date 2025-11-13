@@ -8,41 +8,67 @@ import {
   LinearProgress,
   Fade,
   CircularProgress,
-  Grid,
 } from "@mui/material";
 import { Upload } from "@mui/icons-material";
+import axios, { AxiosProgressEvent } from "axios";
 
 export default function UploadDropzone() {
   const [uploading, setUploading] = React.useState(false);
   const [progress, setProgress] = React.useState(0);
   const [fileCount, setFileCount] = React.useState(0);
 
+  const categoryId = 1; // Replace with selected category ID
+  const style = "outline"; // Replace with selected style
+  const createdBy = 1; // Replace with logged-in admin/user ID
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
-      "image/*": [],
+      "image/svg+xml": [],
+      "image/png": [],
       "application/zip": [],
     },
     multiple: true,
-    onDrop: (files) => {
-      console.log("Uploaded files:", files);
+    onDrop: async (files) => {
+      if (!files.length) return;
+
       setFileCount(files.length);
       setUploading(true);
       setProgress(0);
 
-      // Simulate upload
-      const interval = setInterval(() => {
-        setProgress((old) => {
-          const newVal = old + 8;
-          if (newVal >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-              setUploading(false);
-              setFileCount(0);
-            }, 1000);
+      const formData = new FormData();
+      files.forEach((file) => formData.append("files", file));
+      formData.append("category", String(categoryId));
+      formData.append("style", style);
+      formData.append("createdBy", String(createdBy));
+
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/icons/upload",
+          formData,
+          {
+            withCredentials: true, // if using cookies
+            onUploadProgress: (event: AxiosProgressEvent) => {
+              if (event.total) {
+                const percentCompleted = Math.round(
+                  (event.loaded * 100) / event.total
+                );
+                setProgress(percentCompleted);
+              }
+            },
           }
-          return newVal;
-        });
-      }, 200);
+        );
+
+        console.log("Uploaded files:", response.data);
+      } catch (err) {
+        console.error("Upload failed:", err);
+        alert("Upload failed. Check console for details.");
+      } finally {
+        setTimeout(() => {
+          setUploading(false);
+          setFileCount(0);
+          setProgress(0);
+        }, 1000);
+      }
     },
   });
 
@@ -187,7 +213,6 @@ export default function UploadDropzone() {
         </Fade>
       </Stack>
 
-      {/* Gradient animation keyframes */}
       <style jsx global>{`
         @keyframes gradientMove {
           0% {

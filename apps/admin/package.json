@@ -20,6 +20,7 @@
     "@mui/x-tree-view": "^8.15.0",
     "@myorg/ui": "*",
     "@react-spring/web": "^10.0.3",
+    "axios": "^1.13.2",
     "dayjs": "^1.11.18",
     "next": "16.0.0",
     "next-auth": "^4.24.13",

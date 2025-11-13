@@ -26,3 +26,102 @@ enum Role {
   USER
   ADMIN
 }
+
+model Icon {
+  id              Int        @id @default(autoincrement())
+  title           String
+  path            String
+  type            IconType   @default(SVG)
+  status          IconStatus @default(PENDING)
+  approved        Boolean    @default(false)
+  need_to_improve Boolean    @default(false)
+  style           IconStyle  @default(OUTLINE)
+  category_id     Int?
+  category        Category?  @relation(fields: [category_id], references: [id])
+  created_by      Int?
+  created_at      DateTime   @default(now())
+  updated_at      DateTime   @updatedAt
+  deleted_at      DateTime?
+  
+  iconBundles     IconBundle[]
+  tags            Tag[]      @relation("IconTags")
+}
+
+model Bundle {
+  id          Int         @id @default(autoincrement())
+  title       String
+  category_id Int?
+  category    Category?   @relation(fields: [category_id], references: [id])
+  description String?
+  is_paid     Boolean     @default(false)
+  price       Float       @default(0)
+  status      BundleStatus @default(ACTIVE)
+  created_by  Int?
+  created_at  DateTime    @default(now())
+  updated_at  DateTime    @updatedAt
+  deleted_at  DateTime?
+
+  iconBundles IconBundle[]
+  tags        Tag[]       @relation("BundleTags")
+}
+
+model IconBundle {
+  icon_id   Int
+  bundle_id Int
+
+  icon   Icon   @relation(fields: [icon_id], references: [id])
+  bundle Bundle @relation(fields: [bundle_id], references: [id])
+
+  @@id([icon_id, bundle_id])
+}
+
+model Category {
+  id     Int      @id @default(autoincrement())
+  name   String
+  status CategoryStatus @default(ACTIVE)
+
+  icons   Icon[]
+  bundles Bundle[]
+}
+
+model Tag {
+  id             Int        @id @default(autoincrement())
+  taggable_id    Int
+  taggable_type  TaggableType
+  name           String
+
+  // Polymorphic simulation: separate relations (not enforced by Prisma)
+  iconTags   Icon[]   @relation("IconTags")
+  bundleTags Bundle[] @relation("BundleTags")
+}
+
+enum IconType {
+  SVG
+  PNG
+}
+
+enum IconStatus {
+  PENDING
+  ACTIVE
+  INACTIVE
+}
+
+enum IconStyle {
+  OUTLINE
+  FILL
+}
+
+enum BundleStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum CategoryStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum TaggableType {
+  ICON
+  BUNDLE
+}
