@@ -37,10 +37,10 @@ export class IconsService {
     const icon = await prisma.icon.create({
       data: {
         title: file.originalname,
-        path: `uploads/icons/${style}/${categoryId}/${filename}`,
+        path: `uploads/icons/${style}/1/${filename}`,
         type: IconType.PNG,
         style: IconStyle.OUTLINE,
-        category_id: categoryId,
+        category_id: 1,
         created_by: createdBy,
         status: IconStatus.PENDING,
       },

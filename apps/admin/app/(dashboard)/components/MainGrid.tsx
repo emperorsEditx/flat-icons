@@ -14,7 +14,18 @@ import HighlightedCard from "./HighlightedCard";
 import PageViewsBarChart from "./PageViewsBarChart";
 import SessionsChart from "./SessionsChart";
 import StatCard, { StatCardProps } from "./StatCard";
-import { DockOutlined, Store, Timelapse, Upload } from "@mui/icons-material";
+import { DockOutlined, Timelapse } from "@mui/icons-material";
+import Link from "next/link";
+import {
+  AccessTime,
+  EditDocument,
+  Settings,
+  Store,
+  Upload,
+  DoNotDisturbAlt,
+  Delete,
+  Clear,
+} from "@mui/icons-material";
 
 const data: StatCardProps[] = [
   {
@@ -52,7 +63,7 @@ const data: StatCardProps[] = [
 
 export default function MainGrid() {
   return (
-    <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
+    <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" }, px: 3 }}>
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         All Icons
@@ -74,52 +85,58 @@ export default function MainGrid() {
       </Grid>
       <Grid container spacing={2} columns={12} justifyContent="center">
         <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-          <Card
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-              height: "100%",
-              borderRadius: 1,
-              boxShadow: 3,
-              p: 2,
-              transition: "all 0.3s ease",
-              "&:hover": { boxShadow: 6, transform: "translateY(-5px)" },
-            }}
-          >
-            <CardContent>
-              {/* Icon with rounded background */}
-              <Box
-                sx={{
-                  width: 60,
-                  height: 60,
-                  borderRadius: "50%",
-                  backgroundColor: "primary.main",
-                  color: "white",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  mx: "auto",
-                  mb: 2,
-                }}
-              >
-                <Upload fontSize="large" />
-              </Box>
+          <Link href="/my-icons/upload" style={{ textDecoration: "none" }}>
+            <Card
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                height: "100%",
+                borderRadius: 1,
+                p: 2,
+                backgroundColor: "#fff",
+                transition: "all 0.3s ease",
+                "&:hover": { boxShadow: 1, transform: "translateY(-5px)" },
+              }}
+            >
+              <CardContent>
+                {/* Icon with rounded background */}
+                <Box
+                  sx={{
+                    width: 60,
+                    height: 60,
+                    borderRadius: "50%",
+                    backgroundColor: "#2CB88B",
+                    color: "white",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    mx: "auto",
+                    mb: 2,
+                  }}
+                >
+                  <Upload fontSize="large" />
+                </Box>
 
-              {/* Texts */}
-              <Typography
-                component="h4"
-                variant="h6"
-                sx={{ mb: 1, fontWeight: 600 }}
-              >
-                Upload New
-              </Typography>
-              <Typography component="p" variant="body1" color="text.secondary">
-                Request to upload
-              </Typography>
-            </CardContent>
-          </Card>
+                {/* Texts */}
+                <Typography
+                  component="h4"
+                  variant="h6"
+                  sx={{ mb: 1, fontWeight: 600 }}
+                >
+                  Upload New
+                </Typography>
+                <Typography
+                  component="p"
+                  variant="body1"
+                  color="text.secondary"
+                >
+                  Request to upload
+                </Typography>
+              </CardContent>
+            </Card>
+          </Link>
         </Grid>
         <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
           <Card
@@ -130,10 +147,10 @@ export default function MainGrid() {
               textAlign: "center",
               height: "100%",
               borderRadius: 1,
-              boxShadow: 3,
               p: 2,
+              backgroundColor: "#fff",
               transition: "all 0.3s ease",
-              "&:hover": { boxShadow: 6, transform: "translateY(-5px)" },
+              "&:hover": { boxShadow: 1, transform: "translateY(-5px)" },
             }}
           >
             <CardContent>
@@ -143,7 +160,7 @@ export default function MainGrid() {
                   width: 60,
                   height: 60,
                   borderRadius: "50%",
-                  backgroundColor: "primary.main",
+                  backgroundColor: "#1B252E",
                   color: "white",
                   display: "flex",
                   alignItems: "center",
@@ -178,10 +195,10 @@ export default function MainGrid() {
               textAlign: "center",
               height: "100%",
               borderRadius: 1,
-              boxShadow: 3,
               p: 2,
+              backgroundColor: "#fff",
               transition: "all 0.3s ease",
-              "&:hover": { boxShadow: 6, transform: "translateY(-5px)" },
+              "&:hover": { boxShadow: 1, transform: "translateY(-5px)" },
             }}
           >
             <CardContent>
@@ -191,7 +208,7 @@ export default function MainGrid() {
                   width: 60,
                   height: 60,
                   borderRadius: "50%",
-                  backgroundColor: "primary.main",
+                  backgroundColor: "#1B252E",
                   color: "white",
                   display: "flex",
                   alignItems: "center",
@@ -200,7 +217,7 @@ export default function MainGrid() {
                   mb: 2,
                 }}
               >
-                <DockOutlined fontSize="large" />
+                <EditDocument fontSize="large" />
               </Box>
 
               {/* Texts */}
@@ -226,10 +243,10 @@ export default function MainGrid() {
               textAlign: "center",
               height: "100%",
               borderRadius: 1,
-              boxShadow: 3,
               p: 2,
+              backgroundColor: "#fff",
               transition: "all 0.3s ease",
-              "&:hover": { boxShadow: 6, transform: "translateY(-5px)" },
+              "&:hover": { boxShadow: 1, transform: "translateY(-5px)" },
             }}
           >
             <CardContent>
@@ -239,7 +256,7 @@ export default function MainGrid() {
                   width: 60,
                   height: 60,
                   borderRadius: "50%",
-                  backgroundColor: "primary.main",
+                  backgroundColor: "#1B252E",
                   color: "white",
                   display: "flex",
                   alignItems: "center",
@@ -248,7 +265,7 @@ export default function MainGrid() {
                   mb: 2,
                 }}
               >
-                <Timelapse fontSize="large" />
+                <AccessTime fontSize="large" />
               </Box>
 
               {/* Texts */}

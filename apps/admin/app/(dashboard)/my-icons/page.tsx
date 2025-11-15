@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export default function MyIcons() {
   return (
-    <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
+    <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" }, px: 3 }}>
       <Grid container spacing={2} columns={12} justifyContent="center">
         <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
           <Link href="/my-icons/upload" style={{textDecoration: 'none'}}>

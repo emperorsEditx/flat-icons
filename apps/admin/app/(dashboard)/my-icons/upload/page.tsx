@@ -31,7 +31,7 @@ export default function UploadNewIcons() {
     if (newView !== null) setView(newView);
   };
   return (
-    <div style={{ width: "100%", textAlign: "left" }}>
+    <div style={{ width: "100%", textAlign: "left", paddingRight: "20px", paddingLeft: "20px" }}>
       <Typography variant="h4" gutterBottom sx={{ textAlign: "left", mb: 4 }}>
         Upload New Icons
       </Typography>

@@ -79,7 +79,7 @@ export default function UploadDropzone() {
         width: "100%",
         border: "3px dashed #2CB88B",
         borderRadius: 3,
-        p: { xs: 3, md: 6 },
+        p: { xs: 3, md: 4},
         textAlign: "center",
         cursor: "pointer",
         transition: "all 0.3s ease",
@@ -189,7 +189,7 @@ export default function UploadDropzone() {
                   variant="h4"
                   sx={{
                     color: "text.primary",
-                    fontWeight: 600,
+                    fontWeight: 400,
                     fontSize: { xs: "1.5rem", md: "2rem" },
                   }}
                 >
@@ -205,7 +205,7 @@ export default function UploadDropzone() {
                     mx: "auto",
                   }}
                 >
-                  or upload a ZIP pack — review time 4–7 days.
+                  Or drag and drop a ZIP file for larger packs. The expected review time is 4 to 7 days.
                 </Typography>
               </>
             )}

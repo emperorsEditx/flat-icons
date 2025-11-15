@@ -30,7 +30,7 @@ export default function MenuContent() {
       <List dense sx={{ width: "100%", paddingRight:'0px' }}>
         {mainListItems.map((item, index) => {
           const route = `/${item.text.replace(" ", "-").toLowerCase() == "dashboard" ? "" : item.text.replace(" ", "-").toLowerCase()}`;
-          const isActive = pathname === route;
+          const isActive = '/' + pathname.split('/')[1] == route;
 
           return (
             <ListItem
@@ -53,7 +53,7 @@ export default function MenuContent() {
               >
                 <ListItemButton
                   selected={isActive}
-                  style={{color:isActive?'':'#fff', padding: '10px 0px 10px 15px', borderRadius: '50px 0px 0px 50px', backgroundColor: isActive ? '#F4F7FE' : '' }}
+                  style={{color:isActive?'':'#fff', padding: '7px 0px 7px 15px', borderRadius: '50px 0px 0px 50px', backgroundColor: isActive ? '#F4F7FE' : '' }}
                 >
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText

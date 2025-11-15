@@ -16,6 +16,7 @@ import { signOut, useSession } from "next-auth/react";
 import NavbarBreadcrumbs from "./NavbarBreadcrumbs";
 import MenuButton from "./MenuButton";
 import ColorModeIconDropdown from "../../shared-theme/ColorModeIconDropdown";
+import { ArrowDropDown } from "@mui/icons-material";
 
 export default function Header() {
   const { data: session } = useSession();
@@ -45,17 +46,21 @@ export default function Header() {
         justifyContent: "space-between",
         maxWidth: { sm: "100%", md: "1700px" },
         pt: 1.5,
+        background: '#fff',
+        px: 3
       }}
       spacing={2}
     >
-      <NavbarBreadcrumbs />
+      <Typography variant="body2" color="text.primary">
+        Thank you for being part of out community!
+      </Typography>
 
       <Stack direction="row" sx={{ gap: 1, alignItems: "center" }}>
+        <ColorModeIconDropdown />
+
         <MenuButton showBadge aria-label="Open notifications">
           <NotificationsRoundedIcon />
         </MenuButton>
-
-        <ColorModeIconDropdown />
 
         {/* User Dropdown */}
         <Button
@@ -65,16 +70,14 @@ export default function Header() {
             display: "flex",
             alignItems: "center",
             gap: 1,
+            px: 1,
           }}
         >
-          <Avatar
-            alt={session?.user?.name || "User"}
-            src={session?.user?.image || ""}
-            sx={{ width: 32, height: 32 }}
-          />
           <Typography variant="body2" color="text.primary">
-            {session?.user?.name || "Guest"}
+            {session?.user?.name || "Muhammad Awais Mughal"}
           </Typography>
+
+          <ArrowDropDown fontSize="small" />
         </Button>
 
         <Menu
@@ -90,7 +93,9 @@ export default function Header() {
             <AccountCircleRoundedIcon fontSize="small" sx={{ mr: 1 }} />
             Profile
           </MenuItem>
+
           <Divider />
+
           <MenuItem onClick={handleLogout}>
             <LogoutRoundedIcon fontSize="small" sx={{ mr: 1 }} />
             Logout

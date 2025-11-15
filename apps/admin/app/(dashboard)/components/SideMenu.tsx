@@ -1,16 +1,8 @@
 "use client";
-import * as React from "react";
 import { styled } from "@mui/material/styles";
-import Avatar from "@mui/material/Avatar";
 import MuiDrawer, { drawerClasses } from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import SelectContent from "./SelectContent";
 import MenuContent from "./MenuContent";
-import CardAlert from "./CardAlert";
-import OptionsMenu from "./OptionsMenu";
 
 const drawerWidth = 200;
 
@@ -19,9 +11,12 @@ const Drawer = styled(MuiDrawer)({
   flexShrink: 0,
   boxSizing: "border-box",
   mt: 10,
+  borderRightColor: "#F4F7FE !important",
   [`& .${drawerClasses.paper}`]: {
     width: drawerWidth,
     boxSizing: "border-box",
+    backgroundColor: '#0B0E14',
+    borderRightColor: "#F4F7FE !important",
   },
 });
 
@@ -34,7 +29,6 @@ export default function SideMenu() {
         [`& .${drawerClasses.paper}`]: {
           backgroundColor: "#1B252E",
         },
-        border: 'none', backgroundColor: '#1B252E'
       }}
     >
       <Box
@@ -42,7 +36,8 @@ export default function SideMenu() {
           display: "flex",
           mt: "calc(var(--template-frame-height, 0px) + 10px)",
           p: 1.5,
-          border: 'none', backgroundColor: '#1B252E'
+          border: "none",
+          backgroundColor: "#1B252E",
         }}
       >
         <svg
